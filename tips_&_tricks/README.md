@@ -79,7 +79,7 @@ you can create variables from the output of an Ansible task with the task keywor
 
 When stdout is returned, Ansible always provides a list of strings, each containing one item per line from the original output.
 
-```
+```bash
 "stdout_lines": [
 "foo!"
 ]
@@ -135,13 +135,23 @@ ignore_errors: true # instead of fail at process it would be ignored and error g
 
 ```
 
-##
+## lineinfile  module and handlers
+![lineinfile main parameters](image-4.png)
+see enable_root_login
+You can use it to add, modify, remove, or replace a line or multiple lines in the host's configuration files
 
 ```bash
-
+ansible-playbook -i inventory.ini --diff  enable_root_login.yml --> make changes and shows diff
+ansible-playbook -i inventory.ini --check  enable_root_login.yml --> dry run
+```bash
+## ansible magic variable and loop
+![magic variable ](image-3.png)
 ```
 
-##
+## ansible builder and runner
+builder used for docker (With ansible-builder you can configure and build portable, consistent, customized Ansible control nodes that are packaged as containers by Podman or Docker.)
+
+runner
 
 ```bash
 
