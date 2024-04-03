@@ -14,5 +14,5 @@
         name: "{{ item }}"
         enabled: false
         state: stopped
-      when: "item in services"
-      with_items: '{{ disable_services }}'
+      when: "item in services" # This condition ensures that the service is disabled only if it is present in the services facts gathered earlier.
+      with_items: '{{ disable_services }}'  # This iterates over the items in the disable_services list.
